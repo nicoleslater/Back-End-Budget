@@ -1,0 +1,51 @@
+[
+    {
+      "id": 1,
+      "description": "Salary",
+      "amount": 2000.00,
+      "date": "2023-10-15",
+      "category": "Income",
+      "notes": "Monthly salary deposit"
+    },
+    {
+      "id": 2,
+      "description": "Rent",
+      "amount": -800.00,
+      "date": "2023-10-01",
+      "category": "Housing",
+      "notes": "Monthly rent payment"
+    },
+    {
+      "id": 3,
+      "description": "Groceries",
+      "amount": -50.00,
+      "date": "2023-10-05",
+      "category": "Food",
+      "notes": "Weekly grocery shopping"
+    },
+    {
+      "id": 4,
+      "description": "Dinner with Friends",
+      "amount": -30.00,
+      "date": "2023-10-10",
+      "category": "Entertainment",
+      "notes": "Split the bill"
+    },
+    {
+      "id": 5,
+      "description": "Internet Bill",
+      "amount": -60.00,
+      "date": "2023-10-03",
+      "category": "Utilities",
+      "notes": "Monthly internet bill"
+    },
+    {
+      "id": 6,
+      "description": "Savings",
+      "amount": 300.00,
+      "date": "2023-10-20",
+      "category": "Savings",
+      "notes": "Deposit to savings account"
+    }
+  ]
+  
