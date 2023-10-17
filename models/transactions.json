@@ -1,51 +1,51 @@
 [
     {
       "id": 1,
-      "description": "Salary",
+      "item_name": "Salary",
       "amount": 2000.00,
       "date": "2023-10-15",
-      "category": "Income",
-      "notes": "Monthly salary deposit"
+      "from": "Employer",
+      "category": "Income"
     },
     {
       "id": 2,
-      "description": "Rent",
+      "item_name": "Rent",
       "amount": -800.00,
       "date": "2023-10-01",
-      "category": "Housing",
-      "notes": "Monthly rent payment"
+      "from": "Landlord",
+      "category": "Housing"
     },
     {
       "id": 3,
-      "description": "Groceries",
+      "item_name": "Groceries",
       "amount": -50.00,
       "date": "2023-10-05",
-      "category": "Food",
-      "notes": "Weekly grocery shopping"
+      "from": "Grocery Store",
+      "category": "Food"
     },
     {
       "id": 4,
-      "description": "Dinner with Friends",
+      "item_name": "Dinner with Friends",
       "amount": -30.00,
       "date": "2023-10-10",
-      "category": "Entertainment",
-      "notes": "Split the bill"
+      "from": "Restaurant",
+      "category": "Entertainment"
     },
     {
       "id": 5,
-      "description": "Internet Bill",
+      "item_name": "Internet Bill",
       "amount": -60.00,
       "date": "2023-10-03",
-      "category": "Utilities",
-      "notes": "Monthly internet bill"
+      "from": "Internet Provider",
+      "category": "Utilities"
     },
     {
       "id": 6,
-      "description": "Savings",
+      "item_name": "Savings",
       "amount": 300.00,
       "date": "2023-10-20",
-      "category": "Savings",
-      "notes": "Deposit to savings account"
+      "from": "Savings Account",
+      "category": "Savings"
     }
   ]
   
