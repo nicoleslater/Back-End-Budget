@@ -1,17 +1,20 @@
 const express = require('express');
-const fs = require('fs');
 
-const transactions = require("./models/transactions.json");
+const transactionsData = require("./models/transactions");
+
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+app.use(express.json());
+app.use("/transactions", transactions);
 
 app.get('/', (req, res) => {
   res.send('Hello from the server!');
 });
 
 app.get('/transactions', (req, res) => {
-    res.json(transactions);
+    res.json(transactionsData);
 });
 
 app.get('/transactions/:id', (req, res) => {
@@ -28,13 +31,14 @@ app.get('/transactions/:id', (req, res) => {
 
 app.post('/transactions', (req, res) => {
     const newTransaction = req.body;
-    newTransaction.id = transactions.length > 0 ? Math.max(...transactions.map(t => t.id)) + 1 : 1;
-    transactions.push(newTransaction);
 
-    fs.writeFileSync(transactionsFilePath, JSON.stringify(transactions, null, 2));
-    
+    const maxId = transactionsData.length > 0 ? Math.max(...transactionsData.map(t => t.id)) : 0;
+    newTransaction.id = maxId + 1;
+
+    transactionsData.push(newTransaction);
+
     res.json(newTransaction);
-})
+});
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

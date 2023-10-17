@@ -1,4 +1,4 @@
-[
+ module.exports = [
     {
       "id": 1,
       "item_name": "Salary",
@@ -47,5 +47,5 @@
       "from": "Savings Account",
       "category": "Savings"
     }
-  ]
+  ];
   
