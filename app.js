@@ -1,25 +1,25 @@
 const express = require('express');
 
 const transactionsData = require("./models/transactions");
-
+const transactions = express.Router();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
-app.use("/transactions", transactions);
+app.use("/transaction", transactions);
 
 app.get('/', (req, res) => {
   res.send('Hello from the server!');
 });
 
-app.get('/transactions', (req, res) => {
+app.get('/transaction', (req, res) => {
     res.json(transactionsData);
 });
 
-app.get('/transactions/:id', (req, res) => {
+app.get('/transaction/:id', (req, res) => {
     const id = parseInt(req.params.id);
-    const transaction = transactions.find(item => item.id === id);
+    const transaction = transactionsData.find(item => item.id === id);
 
     if(transaction){
         res.json(transaction);
@@ -29,7 +29,7 @@ app.get('/transactions/:id', (req, res) => {
 
 });
 
-app.post('/transactions', (req, res) => {
+app.post('/transaction', (req, res) => {
     const newTransaction = req.body;
 
     const maxId = transactionsData.length > 0 ? Math.max(...transactionsData.map(t => t.id)) : 0;
