@@ -34,6 +34,10 @@ transactions.get('/:id', (req, res) => {
 
 });
 
+transactions.put('/:id', (req, res) => {
+    const {id} = req.params;
+})
+
 
 
 
