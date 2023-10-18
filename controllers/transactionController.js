@@ -1,5 +1,4 @@
 const express = require("express");
-const app = express();
 
 const transactions = express.Router();
 const transactionData =  require("../models/transactions");
