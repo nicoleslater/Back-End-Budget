@@ -9,12 +9,12 @@ const transactionData =  require("../models/transactions");
 transactions.post('/', (req, res) => {
     const newTransaction = req.body;
 
-    const maxId = transactionData.length > 0 ? Math.max(...transactionData.map(t => t.id)) : 0;
-    newTransaction.id = maxId + 1;
+    // const maxId = transactionData.length > 0 ? Math.max(...transactionData.map(t => t.id)) : 0;
+    // newTransaction.id = maxId + 1;
 
     transactionData.push(newTransaction);
 
-    res.json(newTransaction);
+    res.status(200).json(newTransaction);
 });
 
 transactions.get('/', (req, res) => {
@@ -22,23 +22,39 @@ transactions.get('/', (req, res) => {
     res.json(transactionData);
 });
 
-transactions.get('/:id', (req, res) => {
-    const id = parseInt(req.params.id);
-    const transaction = transactionData.find(item => item.id === id);
+transactions.get('/:index', (req, res) => {
+    const {index} = req.params;
 
-    if(transaction){
-        res.json(transaction);
+    if(index >= 0 && index < transactionData.length){
+        res.status(200).json(transactionsData[index]);
     } else {
         res.status(404).json({message: 'Transaction not found'});
     }
 
 });
 
-transactions.put('/:id', (req, res) => {
-    const {id} = req.params;
+transactions.put('/:arrayIndex', (req, res) => {
+    const {arrayIndex} = req.params;
+    if(transactionData[arrayIndex]){
+         transactionData[arrayIndex] = req.body
+         res.status(200).json((transactionData[arrayIndex]))
+    } else {
+        res.status(404)
+    }   
 });
 
-transactions.delete('/:')
+transactions.delete('/:arrayIndex', (req, res) => {
+    const {arrayIndex} = req.params;
+    if(transactionData[arrayIndex]){
+        const deletedArray = transactionData.splice(arrayIndex, 1)
+        res.status(200).json(deletedArray[0])
+    }else {
+        res.status(404)
+    }
+
+});
+
+
 
 
 
