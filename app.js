@@ -12,7 +12,7 @@ app.use("/transactions", transactions);
 
 app.get('/', (req, res) => {
     
-  res.send('Welcome to Nicole/s Budget App!');
+  res.send('Welcome to Budget App!');
 });
 
 // app.get('/transaction', (req, res) => {
