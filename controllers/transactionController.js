@@ -4,23 +4,20 @@ const transactions = express.Router();
 const transactionData =  require("../models/transactions");
 
 
-
+transactions.get('/', (req, res) => {
+    console.log(transactions)
+    res.json(transactionData);
+});
 
 transactions.post('/', (req, res) => {
     const newTransaction = req.body;
-
-    // const maxId = transactionData.length > 0 ? Math.max(...transactionData.map(t => t.id)) : 0;
-    // newTransaction.id = maxId + 1;
     
     transactionData.push(newTransaction);
 
     res.status(200).json(newTransaction);
 });
 
-transactions.get('/', (req, res) => {
-    // console.log(transactions)
-    res.json(transactionData);
-});
+
 
 transactions.get('/:index', (req, res) => {
     const {index} = req.params;

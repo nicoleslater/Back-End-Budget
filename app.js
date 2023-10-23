@@ -5,7 +5,8 @@ const transactions = require("./controllers/transactionController");
 
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+
+// const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use("/transactions", transactions);
@@ -14,6 +15,9 @@ app.get('/', (req, res) => {
     
   res.send('Welcome to Budget App!');
 });
+app.get("/404", (req, res) => {
+  res.send("I'm sorry that page can not be found, please try again!");
+})
 
 // app.get('/transaction', (req, res) => {
 //     res.json(transactionsData);
@@ -42,9 +46,9 @@ app.get('/', (req, res) => {
 //     res.json(newTransaction);
 // });
 
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+// app.listen(PORT, () => {
+//   console.log(`Server is running on port ${PORT}`);
+// });
 
 
 module.exports = app;
