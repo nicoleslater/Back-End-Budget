@@ -23,7 +23,7 @@ transactions.get('/:index', (req, res) => {
     const {index} = req.params;
 
     if(index >= 0 && index < transactionData.length){
-        res.status(200).json(transactionsData[index]);
+        res.status(200).json(transactionData[index]);
     } else {
         res.status(404).json({message: 'Transaction not found'});
     }
