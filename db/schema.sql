@@ -1,12 +1,13 @@
-DROP DATABASE IF EXISTS transactions_dev;
+DROP DATABASE IF EXISTS transaction_dev;
 
-CREATE DATABASE transactions_dev;
+CREATE DATABASE transaction_dev;
 
-\c transactions_dev;
+\c transaction_dev;
 
 CREATE TABLE transactions (
     id SERIAL PRIMARY KEY, 
     item_name TEXT NOT NULL,
-    amount INT, 
+    amount NUMERIC, 
     due_date DATE, 
+    is_priority BOOLEAN
 )
