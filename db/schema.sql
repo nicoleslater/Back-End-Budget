@@ -8,5 +8,5 @@ CREATE TABLE transactions (
     id SERIAL PRIMARY KEY, 
     item_name TEXT NOT NULL,
     amount INT, 
-    transaction_date DATE, 
+    due_date DATE, 
 )
