@@ -14,5 +14,5 @@ VALUES
 ('Entertainment', 75, '2023-10-10', false),
 ('Clothing', 50, '2023-10-19', false),
 ('Savings', 400, '2023-10-01', true),
-('Gym', 40, '2023-10-05', false)
+('Gym', 40, '2023-10-05', false);
 
