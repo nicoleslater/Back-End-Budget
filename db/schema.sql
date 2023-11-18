@@ -10,4 +10,4 @@ CREATE TABLE transactions (
     amount NUMERIC, 
     due_date DATE, 
     is_priority BOOLEAN
-)
+);
