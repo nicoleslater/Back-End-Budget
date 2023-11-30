@@ -1,8 +1,8 @@
-DROP DATABASE IF EXISTS transaction_dev;
+DROP DATABASE IF EXISTS transactions_dev;
 
-CREATE DATABASE transaction_dev;
+CREATE DATABASE transactions_dev;
 
-\c transaction_dev;
+\c transactions_dev;
 
 CREATE TABLE transactions (
     id SERIAL PRIMARY KEY, 
