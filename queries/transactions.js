@@ -11,7 +11,7 @@ const getAllTransactions = async () => {
 
 const getOneTransaction = async (id) => {
     try{
-        const oneTransaction = await db.one("SELECT * FROM transactions WHERE id=$1", id)
+        const oneTransaction = await db.one("SELECT * FROM transactions WHERE id=$1", [id]);
         return oneTransaction
     } catch(error){
         return error
@@ -20,7 +20,7 @@ const getOneTransaction = async (id) => {
 
 const createTransaction = async (transaction) => {
     try{
-        const createdTransaction = await db.one("INSERT INTO transactions (item_name, amount, due_date, is_priority) VALUES ($1, $2, $3, $4)RETURNING *", [transaction.item_name, transaction.amount, transaction.due_date, transaction.is_priority])
+        const createdTransaction = await db.one("INSERT INTO transactions (item_name, amount, due_date, is_priority) VALUES ($1, $2, $3, $4) RETURNING *", [transaction.item_name, transaction.amount, transaction.due_date, transaction.is_priority])
         return createdTransaction
     } catch(error){
         return error
@@ -57,5 +57,5 @@ module.exports = {
     getOneTransaction, 
     createTransaction, 
     deleteTransaction, 
-    updateTransaction
+    updateTransaction,
 }
