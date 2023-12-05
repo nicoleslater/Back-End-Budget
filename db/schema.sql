@@ -8,6 +8,6 @@ CREATE TABLE transactions (
     id SERIAL PRIMARY KEY, 
     item_name TEXT NOT NULL,
     amount NUMERIC, 
-    due_date DATE, 
+    due_date TEXT, 
     is_priority BOOLEAN
 );
