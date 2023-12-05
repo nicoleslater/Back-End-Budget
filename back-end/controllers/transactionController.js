@@ -25,9 +25,9 @@ transactions.get("/:id", async (req, res) => {
 transactions.get("/", async (req, res) => {
     const allTransactions = await getAllTransactions();
     if(allTransactions[0]){
-        res.status(200).json({success: true, data: { payload: allTransactions }});
+        res.status(200).json({ success: true, data: { payload: allTransactions } });
     } else {
-        res.status(404).json({success: false, data: { error: "Server Error! (Controller) "}});
+        res.status(404).json({ success: false, data: { error: "Server Error! (Controller) "} });
     }
 });
 
