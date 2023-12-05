@@ -6,9 +6,9 @@ const {
     createTransaction, 
     deleteTransaction, 
     updateTransaction
-} = require("../../queries/transactions");
+} = require("../queries/transactions");
 
-const { checkName, checkBoolean } = require("../../validations/checkTransactions");
+const { checkName, checkBoolean } = require("../validations/checkTransactions");
 
 const transactions = express.Router();
 
