@@ -8,10 +8,10 @@ const checkName = (req, res, next) => {
 }
 
 const checkBoolean = (req, res, next) => {
-    if (req.body.is_favorite === true || req.body.is_favorite === false){
+    if (req.body.is_priority === true || req.body.is_priority === false){
         next()
     } else {
-        res.status(400).json({error: "is_favorite must be a boolean value"})
+        res.status(400).json({error: "is_priority must be a boolean value"})
     }
 }
 
