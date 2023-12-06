@@ -2,7 +2,7 @@
 
 
 
-INSERT INTO transactions (item_name, amount, due_date, is_priority)
+INSERT INTO transactions (name, amount, due_date, is_priority)
 VALUES
 
 ('Electricity', 150, '10-01-2023', true),
