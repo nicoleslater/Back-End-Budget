@@ -1,6 +1,4 @@
-\c transaction_dev; 
-
-
+\c transactions_dev; 
 
 INSERT INTO transactions (name, amount, due_date, is_priority)
 VALUES
