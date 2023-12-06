@@ -4,6 +4,8 @@ CREATE DATABASE transactions_dev;
 
 \c transactions_dev;
 
+DROP TABLE IF EXISTS transactions;
+
 CREATE TABLE transactions (
     id SERIAL PRIMARY KEY, 
     name TEXT NOT NULL,
