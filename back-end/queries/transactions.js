@@ -41,10 +41,10 @@ const deleteTransaction = async (id) => {
 
 const updateTransaction = async (id, transaction) => {
     try{
-        const {item_name, amount, due_date, is_priority} = transaction;
+        const {name, amount, deadline, priority} = transaction;
         const updatedTransaction = await db.one(
-            "UPDATE transactions SET item_name=$1, amount=$2, due_date=$3, is_priority=$4 WHERE id=$5 RETURNING *",
-            [item_name, amount, due_date, is_priority, id]
+            "UPDATE transactions SET name=$1, amount=$2, deadline=$3, priority=$4 WHERE id=$5 RETURNING *",
+            [name, amount, deadline, priority, id]
         );
         return updatedTransaction
     } catch(err){

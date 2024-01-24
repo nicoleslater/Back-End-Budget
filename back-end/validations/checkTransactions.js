@@ -8,7 +8,7 @@ const checkName = (req, res, next) => {
 }
 
 const checkBoolean = (req, res, next) => {
-    if (req.body.is_priority === true || req.body.is_priority === false){
+    if (req.body.priority === true || req.body.priority === false){
         next()
     } else {
         res.status(400).json({error: "is_priority must be a boolean value"})
