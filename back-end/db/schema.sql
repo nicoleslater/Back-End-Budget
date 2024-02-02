@@ -8,7 +8,7 @@ CREATE TABLE transactions (
     id SERIAL PRIMARY KEY, 
     name TEXT NOT NULL,
     amount NUMERIC,
-    from TEXT, 
+    vendor TEXT, 
     deadline TEXT, 
     category TEXT,
     priority BOOLEAN

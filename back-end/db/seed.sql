@@ -1,6 +1,6 @@
 \c transactions_dev; 
 
-INSERT INTO transactions (name, amount, from, deadline, category, priority)
+INSERT INTO transactions (name, amount, vendor, deadline, category, priority)
 VALUES
 ('Electricity', 150, 'Utility Company', '10-01-2023', 'Utilities', true),
 ('Internet', 80, 'Internet Provider', '10-05-2023', 'Utilities', true),
