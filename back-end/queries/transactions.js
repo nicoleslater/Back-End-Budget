@@ -20,7 +20,7 @@ const getOneTransaction = async (id) => {
 
 const createTransaction = async (transaction) => {
     try{
-        const createdTransaction = await db.one("INSERT INTO transactions (name, amount, deadline, priority) VALUES ($1, $2, $3, $4) RETURNING *", [transaction.name, transaction.amount, transaction.deadline, transaction.priority])
+        const createdTransaction = await db.one("INSERT INTO transactions (name, amount, vendor, deadline, category, priority) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *", [transaction.name, transaction.amount, transaction.vendor, transaction.deadline, transaction.category, transaction.priority])
         return createdTransaction
     } catch(error){
         return error
@@ -41,10 +41,10 @@ const deleteTransaction = async (id) => {
 
 const updateTransaction = async (id, transaction) => {
     try{
-        const {name, amount, deadline, priority} = transaction;
+        const {name, amount, vendor, deadline, category, priority} = transaction;
         const updatedTransaction = await db.one(
-            "UPDATE transactions SET name=$1, amount=$2, deadline=$3, priority=$4 WHERE id=$5 RETURNING *",
-            [name, amount, deadline, priority, id]
+            "UPDATE transactions SET name=$1, amount=$2, vendor=$3, deadline=$4 category=$5 priority=$6 WHERE id=$7 RETURNING *",
+            [name, amount, vendor, deadline, category, priority, id]
         );
         return updatedTransaction
     } catch(err){
